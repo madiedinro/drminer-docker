@@ -25,4 +25,4 @@ RUN set -ex && \
 
 USER miner
 WORKDIR /xmrig
-CMD /usr/bin/xmrig -o $SERVER_URL --donate-level=1 -O $MINING_USER:$MINER_ID -p $API_PASS -k --max-cpu-usage=$CPU_USAGE
+ENTRYPOINT ["/usr/bin/xmrig"]
