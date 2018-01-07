@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.7=
 
 RUN set -ex && \
   addgroup -S miner && \
@@ -25,4 +25,4 @@ RUN set -ex && \
 
 USER miner
 WORKDIR /xmrig
-ENTRYPOINT ["/usr/bin/xmrig"]
+CMD /usr/bin/xmrig -o $SERVER_URL --donate-level=1 -O $MINING_USER:$MINER_ID -p $API_PASS -k --max-cpu-usage=$CPU_USAGE
